@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UOE Election 2026</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- LOGIN SECTION -->
+    <div id="loginSection" class="section active">
+
+
+
+
+      <h3></h3>
+      <h3>UOE ELECTION 2026/2027<br>Use [2026] as your password<br>LOGIN</h3>
+
+      <input type="email" id="email" placeholder="School Email">
+      <input type="password" id="password" placeholder="Password = 2026">
+
+      <button onclick="login()">Login</button>
+
+    </div>
+
+    <!-- VOTING SECTION -->
+    <div id="voteSection" class="section">
+
+      <!-- 🔙 Back to login -->
+      <button class="back-btn" onclick="switchSection('loginSection')">⬅ Back</button>
+
+      <img src="logo.jpeg" alt="logo.png" class="logo">
+
+      <p class="warning">⚠ ONLY SCHOOL OF SCIENCE STUDENTS CAN VOTE</p>
+
+      <h3>Voter Details</h3>
+
+      <input type="text" id="admission" placeholder="Admission Number">
+      <input type="text" id="name" placeholder="Full Name">
+
+      <select id="course">
+        <option value="">Select Course</option>
+        <option>Bachelor of Science (B.Sc.)</option>
+        <option>B.Sc Analytical Chemistry with Computing</option>
+        <option>B.Sc Microbiology</option>
+        <option>B.Sc Biotechnology and Biosafety</option>
+        <option>B.Sc Biochemistry</option>
+        <option>B.Sc Applied Statistics with Computing</option>
+        <option>B.Sc Computer Science</option>
+        <option>B.Sc Actuarial Science</option>
+        <option>B.Sc Informatics</option>
+      </select>
+
+      <h3>Select Candidate</h3>
+
+      <div class="candidates">
+
+
+
+        <div class="candidate">
+          <img src="Tuju.jpeg">
+          <h4>Antone Tuju Okoth</h4>
+          <button onclick="vote('Antone Tuju Okoth')">Vote</button>
+        </div>
+
+        <div class="candidate">
+          <img src="Fridah.jpeg">
+          <h4>Fridah Mwende [F.M]</h4>
+          <button onclick="vote('Fridah Mwende [F.M]')">Vote</button>
+        </div>
+
+        <div class="candidate">
+          <img src="Nyerere.jpeg">
+          <h4>Nyerere Justine Muema</h4>
+          <button onclick="vote('Nyerere Justine Muema')">Vote</button>
+        </div>
+
+        <div class="candidate">
+          <img src="Mewa.jpeg">
+          <h4>Mewa Sifuna Heron</h4>
+          <button onclick="vote('Mewa Sifuna Heron')">Vote</button>
+        </div>
+
+        <div class="candidate">
+          <img src="Eunice.jpeg">
+          <h4>Eunice Bututu Nyagaka</h4>
+          <button onclick="vote('Eunice Bututu Nyagaka')">Vote</button>
+        </div>
+
+        <div class="candidate">
+          <img src="chalse.jpg">
+          <h4>Young Chalse Ouma</h4>
+          <button onclick="vote('Young Chalse Ouma')">Vote</button>
+        </div>
+
+        <div class="candidate">
+          <img src="Cheruiyot.jpeg">
+          <h4>Cheruiyot Brian Kibet</h4>
+          <button onclick="vote('Cheruiyot Brian Kibet')">Vote</button>
+        </div>
+
+      </div>
+
+      <!-- ADMIN ACCESS -->
+      <button onclick="showAdmin()" style="background:red; margin-top:10px;">
+        Admin Access
+      </button>
+
+    </div>
+
+    <!-- SUCCESS SECTION -->
+    <div id="successSection" class="section">
+
+      <img src="logo.jpeg" class="logo">
+
+      <h2>YOU HAVE SUCCESSFULLY VOTED</h2>
+      <h1 id="votedCandidate" style="color:#00ff88;"></h1>
+      <p>THANK YOU FOR YOUR VOTE</p>
+
+      <h2>COMRADES POWER</h2>
+
+      <!-- ACTION BUTTONS -->
+      <button onclick="backToVote()">Vote Again</button>
+      <button onclick="showAdmin()">Admin Panel</button>
+
+    </div>
+
+    <!-- ADMIN SECTION -->
+    <div id="adminSection" class="section">
+
+      <!-- 🔙 Back -->
+      <button class="back-btn" onclick="backFromAdmin()">⬅ Back</button>
+
+      <!-- LOGIN -->
+      <div id="adminLogin">
+        <img src="logo.jpeg" class="logo">
+        <h2>FOR OFFICIAL USE ONLY<br> LOGIN TO SEE THE RESULTS<br>ADMIN LOGIN</h2>
+
+        <input type="password" id="adminPass" placeholder="Enter Admin Password">
+        <button onclick="loginAdmin()">Login</button>
+      </div>
+
+      <!-- DASHBOARD -->
+      <div id="adminDashboard" style="display:none;">
+        <img src="logo.jpeg" class="logo">
+
+        <h2>ADMIN DASHBOARD</h2>
+        <p>Total Votes: <span id="adminTotalVotes">0</span></p>
+
+        <div id="voteList"></div>
+
+        <canvas id="adminBarChart"></canvas>
+        <canvas id="adminPieChart"></canvas>
+
+        <button onclick="logoutAdmin()">Logout</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbyG-rRtbJFr_Y9HzA9orM55Tx1oKfrExady7yLAhdE_m7W_b7j8e9rbew6fBcNgRsUz/exec";
+  </script>
+  <script src="vote.js"></script>
+  <script src="admin.js"></script>
+  <script src="results.js"></script>
+
+</body>
+
+</html>

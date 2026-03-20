@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Panel - UE Election</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+  
+
+  <header>
+    <img src="logo.jpeg" alt="School Logo" class="logo">
+    <h3>Voter Details</h3>
+    <h1>ADMIN DASHBOARD</h1>
+    <h2>UE CONGRESS ELECTION 2026</h2>
+  </header>
+
+  <div class="container">
+
+    <div id="adminLogin">
+
+      <h3>Admin Login</h3>
+
+      <input type="password" id="adminPass" placeholder="Enter Admin Password">
+
+     <button class="back-btn" onclick="backToVote()">⬅ Back</button>
+
+    </div>
+
+    <div id="adminDashboard" style="display:none;">
+
+      <h3>Total Votes: <span id="adminTotalVotes">0</span></h3>
+
+      <canvas id="adminBarChart"></canvas>
+      <canvas id="adminPieChart"></canvas>
+
+     <button class="back-btn" onclick="backToVote()">⬅ Back</button>
+
+    </div>
+
+  </div>
+
+  <script src="admin.js"></script>
+  <script src="vote.js"></script>
+  <script src="results.js"></script>
+
+</body>
+
+</html>

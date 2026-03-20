@@ -1,0 +1,199 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(black, white, #00a651);
+}
+
+/* CONTAINER */
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+
+/* SECTIONS (FIXED) */
+.section {
+  display: none;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.section.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* 🔥 THIS CENTERS THE LOGO */
+  justify-content: center;
+}
+
+/* BACK BUTTON */
+button.back-btn {
+  background: #444;
+  margin-bottom: 10px;
+}
+
+button.back-btn:hover {
+  background: #222;
+}
+
+/* LOGIN BACKGROUND */
+#loginSection {
+  position: relative;
+  background: url("background.jpeg") no-repeat center center;
+  background-size: cover;
+  color: white;
+}
+
+/* DARK OVERLAY */
+#loginSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* KEEP CONTENT ABOVE OVERLAY */
+#loginSection * {
+  position: relative;
+  z-index: 2;
+}
+
+/* 🔥 3D LOGIN TITLE */
+#loginSection h3:last-of-type {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: white;
+
+  /* 3D EFFECT */
+  text-shadow:
+    0 1px 0 #ccc,
+    0 2px 0 #c9c9c9,
+    0 3px 0 #bbb,
+    0 4px 0 #b9b9b9,
+    0 5px 0 #aaa,
+    0 6px 5px rgba(0,0,0,0.6);
+}
+
+/* INPUTS */
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+}
+
+/* BUTTONS */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #00a651;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #007a45;
+}
+
+/* WARNING */
+.warning {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* CANDIDATES */
+.candidates {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.candidate {
+  width: 120px;
+  text-align: center;
+}
+
+.candidate img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #00a651;
+}
+
+/* ADMIN */
+#adminSection input,
+#adminSection button {
+  margin: 10px 0;
+}
+
+/* CHARTS */
+#adminSection canvas {
+  max-width: 100%;
+  margin: 15px 0;
+}
+
+/* MOBILE */
+@media(max-width:600px) {
+  h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+}
+
+/* PERFECT CENTER LOGO */
+.logo {
+  display: block;
+  margin: 0 auto 15px auto; /* center horizontally */
+  width: 120px;
+  height: auto;
+}
+
+/* OPTIONAL: make it more premium */
+.logo {
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 120px;
+  height: auto;
+
+  /* subtle glow */
+  filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.4));
+}
+
+#adminSection #adminLogin h2 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 15px 0;
+
+  /* 3D TEXT EFFECT */
+  color: #ffffff;
+  text-shadow:
+    0 1px 0 #ccc,
+    0 2px 0 #bbb,
+    0 3px 0 #aaa,
+    0 4px 0 #999,
+    0 5px 5px rgba(0,0,0,0.7);
+}
+
+#adminSection #adminLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centers horizontally */
+  justify-content: center;
+  text-align: center;
+}
+
+#adminSection #adminLogin h2 {
+  transform: perspective(500px) rotateX(10deg);
+}
